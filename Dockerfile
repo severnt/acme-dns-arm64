@@ -1,12 +1,14 @@
 FROM golang:alpine AS builder
 
+RUN apk add --update gcc musl-dev
+
 WORKDIR /go/src
 
 ENV GOPATH /go
 
 COPY acme-dns /go/src/acme-dns
 
-RUN cd /go/src/acme-dns && go build
+RUN cd /go/src/acme-dns && CGO_ENABLED=1 go build
 
 FROM alpine:latest
 

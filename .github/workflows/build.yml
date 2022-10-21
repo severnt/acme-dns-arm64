@@ -35,6 +35,6 @@ jobs:
           context: .
           push: true
           tags: |
-            ghcr.io/severnt/acme-dns:${{ github.ref }}
+            ghcr.io/severnt/acme-dns:${{ github.sha }}
             ghcr.io/severnt/acme-dns:latest
 

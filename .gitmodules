@@ -1,0 +1,3 @@
+[submodule "acme-dns"]
+	path = acme-dns
+	url = git@github.com:joohoi/acme-dns.git
